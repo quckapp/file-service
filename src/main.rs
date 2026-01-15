@@ -16,9 +16,9 @@ async fn main() -> std::io::Result<()> {
     tracing_subscriber::fmt::init();
 
     let mongo_uri = env::var("MONGODB_URI").unwrap_or_else(|_| "mongodb://localhost:27017".to_string());
-    let db_name = env::var("DATABASE_NAME").unwrap_or_else(|_| "quckchat_files".to_string());
+    let db_name = env::var("DATABASE_NAME").unwrap_or_else(|_| "quckapp_files".to_string());
     let port = env::var("PORT").unwrap_or_else(|_| "3011".to_string());
-    let s3_bucket = env::var("S3_BUCKET").unwrap_or_else(|_| "quckchat-files".to_string());
+    let s3_bucket = env::var("S3_BUCKET").unwrap_or_else(|_| "quckapp-files".to_string());
 
     let client_options = ClientOptions::parse(&mongo_uri).await.expect("Failed to parse MongoDB URI");
     let client = Client::with_options(client_options).expect("Failed to create MongoDB client");

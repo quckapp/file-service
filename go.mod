@@ -1,4 +1,4 @@
-module github.com/quckchat/file-service
+module github.com/quckapp/file-service
 
 go 1.21
 

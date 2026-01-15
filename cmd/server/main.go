@@ -153,7 +153,7 @@ func main() {
 	}
 	defer mongoClient.Disconnect(ctx)
 
-	mongoDB = mongoClient.Database(getEnv("MONGODB_DATABASE", "quckchat_files"))
+	mongoDB = mongoClient.Database(getEnv("MONGODB_DATABASE", "quckapp_files"))
 	filesCol = mongoDB.Collection("files")
 
 	// Create indexes
@@ -168,7 +168,7 @@ func main() {
 	defer redisClient.Close()
 
 	// Initialize S3
-	s3Bucket = getEnv("S3_BUCKET", "quckchat-files")
+	s3Bucket = getEnv("S3_BUCKET", "quckapp-files")
 	awsCfg, err := config.LoadDefaultConfig(ctx,
 		config.WithRegion(getEnv("AWS_REGION", "us-east-1")),
 	)
