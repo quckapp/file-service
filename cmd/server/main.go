@@ -230,6 +230,9 @@ func main() {
 		// Stats
 		api.GET("/stats", getStats)
 		api.GET("/user/:userId/stats", getUserStats)
+
+		// Extended features
+		registerExtendedRoutes(api)
 	}
 
 	port := getEnv("PORT", "5002")
