@@ -233,6 +233,7 @@ func main() {
 
 		// Extended features
 		registerExtendedRoutes(api)
+		registerExtendedRoutes2(api)
 	}
 
 	port := getEnv("PORT", "5002")
